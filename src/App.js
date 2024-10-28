@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import {Header,MYVAR} from "./components/Header";
+import Counter from "./components/Counter";
+import './components/Header.css'; // Import a CSS file for styling if needed
+import { useContext, useState } from "react";
+import UserForm from "./components/UserForm";
+
+import ThemeContextProvider from "./context/ThemeContextProvider";
+import ThemeContext from "./context/ThemeContext";
+
+function App() {  
+      
+                             
   return (
+    <ThemeContextProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Header fname="Vikash" lname="Lohiya"  /> 
+       <div className="form-container">
+    <UserForm/>
+   
     </div>
+    </div>
+    </ThemeContextProvider>
   );
 }
 
